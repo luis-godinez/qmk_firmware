@@ -2,7 +2,7 @@
 MCU = atmega32u4
 
 # Bootloader selection
-BOOTLOADER = atmel-dfu
+BOOTLOADER = qmk-dfu
 
 # Build Options
 #   change yes to no to disable
@@ -26,7 +26,6 @@ ENCODER_ENABLE = yes
 RGB_MATRIX_ENABLE = yes
 RGB_MATRIX_DRIVER = WS2812
 SPACE_CADET_ENABLE = no
-MAGIC_ENABLE = no
 GRAVE_ESC_ENABLE = no
 LTO_ENABLE = yes
 
