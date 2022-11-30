@@ -32,6 +32,7 @@ enum {
     NUMLOCK_L1_TOGGLE,
     TD_4_6,
     TD_3_5,
+    TD_ESC_TAB,
 };
 
 qk_tap_dance_action_t tap_dance_actions[] = {
@@ -39,6 +40,7 @@ qk_tap_dance_action_t tap_dance_actions[] = {
     [NUMLOCK_L1_TOGGLE] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_NUMLOCK, 1),
     [TD_4_6] = ACTION_TAP_DANCE_DOUBLE(KC_4, KC_6),
     [TD_3_5] = ACTION_TAP_DANCE_DOUBLE(KC_3, KC_5),
+    [TD_ESC_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_TAB),
 };
 
 // LCTL(LALT(KC_TAB))
@@ -84,7 +86,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_E,    KC_D,    KC_C,     TD(ALT_L1_TOGGLE),
     KC_W,    KC_S,    KC_X,     TD(TD_4_6),
     KC_Q,    KC_A,    KC_Z,     TD(TD_3_5),
-    KC_ESC, KC_LCTRL, KC_LSHIFT, KC_M
+    TD(TD_ESC_TAB), KC_LCTRL, KC_LSHIFT, KC_M
   ),
   /* Keymap _FN: RGB Function Layer
    * ,-------------------.
