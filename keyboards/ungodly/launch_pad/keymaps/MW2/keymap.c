@@ -20,41 +20,32 @@
 /* Force Numlock on */
 void matrix_init_user (void) {
   if (!host_keyboard_led_state().num_lock) {
-<<<<<<< HEAD
-      tap_code(KC_NUM_LOCK);
-=======
       tap_code(KC_NUMLOCK);
->>>>>>> 87058047959d7859c2375042935b9b0c602d60b8
   }
 }
 
-// Tap Dance declarations
+// Advanced Tap Dance
+
+// Keycode declarations
 enum {
+    ALT_L1_TOGGLE,
+    NUMLOCK_L1_TOGGLE,
+    TD_4_6,
+    TD_3_5,
     TD_ESC_TAB,
-<<<<<<< HEAD
-    TD_NUMLOCK_L1,
-    TD_3_L0
 };
 
-// Tap Dance definitions
-tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Number 4 (armor plates in warzone)
-    [TD_ESC_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_TAB),
-    [TD_3_L0] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_3, 1),
-    [TD_NUMLOCK_L1] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_NUM_LOCK, 1),
-=======
-    TD_3_L0,
-    TD_NUMLOCK_L1,
-};
-
-// Tap Dance definitions
 qk_tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Number 4 (armor plates in warzone)
+    [ALT_L1_TOGGLE] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_LALT, 1),
+    [NUMLOCK_L1_TOGGLE] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_NUMLOCK, 1),
+    [TD_4_6] = ACTION_TAP_DANCE_DOUBLE(KC_4, KC_6),
+    [TD_3_5] = ACTION_TAP_DANCE_DOUBLE(KC_3, KC_5),
     [TD_ESC_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_TAB),
-    [TD_3_L0] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_3, 1),
-    [TD_NUMLOCK_L1] = ACTION_TAP_DANCE_LAYER_TOGGLE(KC_NUMLOCK, 1),
->>>>>>> 87058047959d7859c2375042935b9b0c602d60b8
 };
+
+// LCTL(LALT(KC_TAB))
+
+// Layers
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   /* Keymap _BL: (Base Layer) Default Numpad Layer
@@ -71,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   * `--------------------'
   */
   [0] = LAYOUT_ortho_5x4(
-   TD(TD_NUMLOCK_L1),  KC_PSLS,  KC_PAST, LT(2, KC_BSPC),
+   TD(NUMLOCK_L1_TOGGLE),  KC_PSLS,  KC_PAST, LT(2, KC_BSPC),
    KC_P7,    KC_P8,    KC_P9,        KC_PMNS,
    KC_P4,    KC_P5,    KC_P6,        KC_PPLS,
    KC_P1,    KC_P2,    KC_P3,        KC_PENT,
@@ -92,14 +83,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   */
   [1] = LAYOUT_ortho_5x4(
     KC_R,    KC_F,    KC_V,     KC_SPACE,
-    KC_E,    KC_D,    KC_C,     KC_LALT,
-    KC_W,    KC_S,    KC_X,     KC_4,
-    KC_Q,    KC_A,    KC_Z,     TD(TD_3_L0),
-<<<<<<< HEAD
-    TD(TD_ESC_TAB),    KC_LCTL,  KC_LSFT,   KC_M
-=======
-    TD(TD_ESC_TAB),    KC_LCTRL,  KC_LSHIFT,   KC_M
->>>>>>> 87058047959d7859c2375042935b9b0c602d60b8
+    KC_E,    KC_D,    KC_C,     TD(ALT_L1_TOGGLE),
+    KC_W,    KC_S,    KC_X,     TD(TD_4_6),
+    KC_Q,    KC_A,    KC_Z,     TD(TD_3_5),
+    TD(TD_ESC_TAB), KC_LCTRL, KC_LSHIFT, KC_M
   ),
   /* Keymap _FN: RGB Function Layer
    * ,-------------------.
@@ -115,19 +102,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    * `-------------------'
    */
     [2] = LAYOUT_ortho_5x4(
-<<<<<<< HEAD
-      KC_LUP,  XXXXXXX,  XXXXXXX,   RGB_TOG,
-      RGB_HUD,  RGB_HUI,  XXXXXXX,   RGB_M_P,
-      RGB_SAD,  RGB_SAI,  XXXXXXX,   RGB_MOD,
-      RGB_VAD,  RGB_VAI,  XXXXXXX,   XXXXXXX,
-        QK_BOOT,  QK_BOOT,  XXXXXXX,   XXXXXXX
-=======
       XXXXXXX,  XXXXXXX,  XXXXXXX,   XXXXXXX,
       RGB_HUD,  RGB_HUI,  XXXXXXX,   RGB_TOG,
       RGB_SAD,  RGB_SAI,  XXXXXXX,   RGB_M_P,
       RGB_VAD,  RGB_VAI,  XXXXXXX,   RGB_MOD,
         RESET,    RESET,  XXXXXXX,   XXXXXXX
->>>>>>> 87058047959d7859c2375042935b9b0c602d60b8
   ),
 };
 
@@ -155,11 +134,7 @@ void matrix_scan_user(void) {
 }
 
 // 0.91" OLED, 128x32 resolution
-<<<<<<< HEAD
-#ifdef OLED_ENABLE
-=======
 #ifdef OLED_DRIVER_ENABLE
->>>>>>> 87058047959d7859c2375042935b9b0c602d60b8
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
 	return OLED_ROTATION_180;
 }
@@ -282,11 +257,7 @@ static void render_light_logo(void) {
   oled_write_raw_P(light_logo, sizeof(light_logo));
 }
 
-<<<<<<< HEAD
-bool oled_task_user(void) {
-=======
 void oled_task_user(void) {
->>>>>>> 87058047959d7859c2375042935b9b0c602d60b8
   switch (get_highest_layer(layer_state)) {
     case 0:
       render_rocket_logo();
@@ -302,9 +273,5 @@ void oled_task_user(void) {
       oled_write_ln_P(PSTR(" UND"), false);
       break;
     }
-<<<<<<< HEAD
-    return false;
-=======
->>>>>>> 87058047959d7859c2375042935b9b0c602d60b8
 }
 #endif
