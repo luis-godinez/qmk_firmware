@@ -16,12 +16,6 @@
 
 #pragma once
 
-/* RGB LED Strip*/
-#define RGBLED_NUM 8
+#define HAL_USE_I2C TRUE
 
-/* Oled Display */
-#define I2C1_SDA_PIN GP18 //OG PCB: GP19 -> SDA
-#define I2C1_SCL_PIN GP19 //OG PCB: GP20 -> SCL
-#define I2C_DRIVER I2CD1
-#define OLED_BRIGHTNESS 128
-#define OLED_FONT_H "keyboards/ungodly/priya50/lib/glcdfont.c"
+#include_next <halconf.h>

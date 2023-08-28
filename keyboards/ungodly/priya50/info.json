@@ -12,7 +12,7 @@
     },
     "diode_direction": "COL2ROW",
     "dynamic_keymap": {
-        "layer_count": 10
+        "layer_count": 4
     },
     "features": {
         "audio": false,
@@ -20,19 +20,23 @@
         "bootmagic": true,
         "command": false,
         "console": false,
+        "encoder": true,
         "extrakey": true,
         "mousekey": true,
         "nkro": false,
         "rgb_matrix": false,
-        "rgblight": true
-    },
-    "ws2812": {
-        "pin": "GP12",
-        "driver": "vendor"
+        "rgblight": true,
+        "oled": true
     },
     "matrix_pins": {
         "cols": ["GP4","GP6","GP7","GP8","GP9","GP13","GP5","GP3","GP2","GP11","GP14","GP15","GP22"],
         "rows": ["GP0","GP1","GP10","GP18"]
+    },
+    "encoder": {
+        "enabled": true,
+        "rotary": [
+            {"pin_a": "GP24", "pin_b": "GP23"}
+        ]
     },
     "mouse_key": {
         "enabled": true
@@ -90,5 +94,9 @@
                  {"label":"Fn", "matrix":[3,12], "x":12, "y":3}
                 ]
         }
+    },
+    "ws2812": {
+        "pin": "GP12",
+        "driver": "vendor"
     }
 }
