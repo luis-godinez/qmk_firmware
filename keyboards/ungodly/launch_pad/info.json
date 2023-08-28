@@ -1,6 +1,5 @@
 {
   "keyboard_name": "Launch Pad",
-<<<<<<< HEAD
   "manufacturer": "Ungodly Design",
   "url": "https://ungodly.design/products/launch-pad",
   "maintainer": "Ungodly Design",
@@ -20,6 +19,24 @@
     "pin": "F7"
   },
   "diode_direction": "COL2ROW",
+  "dynamic_keymap": {
+      "layer_count": 4
+  },
+  "features": {
+      "audio": false,
+      "backlight": false,
+      "bootmagic": true,
+      "command": false,
+      "console": false,
+      "encoder": true,
+      "extrakey": true,
+      "midi":true,
+      "mousekey": false,
+      "nkro": true,
+      "rgb_matrix": true,
+      "rgblight": false,
+      "oled": true
+  },
   "encoder": {
     "rotary": [
       {"pin_a": "C6", "pin_b": "B6", "resolution": 2}
@@ -54,39 +71,6 @@
             {"matrix": [4, 1], "x": 1, "y": 4},
             {"matrix": [4, 2], "x": 2, "y": 4},
             {"matrix": [4, 3], "x": 3, "y": 4}
-=======
-  "url": "https://ungodly.design/products/launch-pad",
-  "maintainer": "Ungodly Design",
-  "width": 4,
-  "height": 5,
-  "layouts": {
-    "LAYOUT_ortho_5x4": {
-        "layout": [
-            {"x":0, "y":0},
-            {"x":1, "y":0},
-            {"x":2, "y":0},
-            {"x":3, "y":0},
-
-            {"x":0, "y":1},
-            {"x":1, "y":1},
-            {"x":2, "y":1},
-            {"x":3, "y":1},
-
-            {"x":0, "y":2},
-            {"x":1, "y":2},
-            {"x":2, "y":2},
-            {"x":3, "y":2},
-
-            {"x":0, "y":3},
-            {"x":1, "y":3},
-            {"x":2, "y":3},
-            {"x":3, "y":3},
-
-            {"x":0, "y":4},
-            {"x":1, "y":4},
-            {"x":2, "y":4},
-            {"x":3, "y":4}
->>>>>>> 87058047959d7859c2375042935b9b0c602d60b8
         ]
     }
   }

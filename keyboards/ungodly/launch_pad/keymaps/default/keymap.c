@@ -14,8 +14,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include QMK_KEYBOARD_H
-#include "analog.h"
-#include "qmk_midi.h"
 
 /* Force Numlock on */
 void matrix_init_user (void) {
@@ -125,29 +123,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       QK_BOOT,    QK_BOOT,  XXXXXXX,   XXXXXXX
   ),
 };
-
-// (Optional) Rotary Encoder, Volume Control
-bool encoder_update_user(uint8_t index, bool clockwise) {
-  if (clockwise) {
-      tap_code(KC_VOLU);
-  } else {
-      tap_code(KC_VOLD);
-  }
-  return true;
-}
-
-// Potentiometer Slider, MIDI Control
-uint8_t divisor = 0;
-void slider(void){
-  if (divisor++) { // only run the slider function 1/256 times it's called
-      return;
-  }
-  midi_send_cc(&midi_device, 2, 0x3E, 0x7F - (analogReadPin(SLIDER_PIN) >> 3));
-}
-
-void matrix_scan_user(void) {
-  slider();
-}
 
 // 0.91" OLED, 128x32 resolution
 #ifdef OLED_ENABLE
