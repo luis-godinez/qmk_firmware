@@ -1,12 +1,13 @@
 # Trinity
 
-A 50% hotswap pcb powered by the RP2040, with underglow lighting, encoder and oled display support.
+A hotswap PCB for the Rama U-80 that offers expanded layout options with hotswap sockets. No RGB.
 
-![Trinity](https://i.imgur.com/zNnmPV9.jpg)
+![Trinity Back](https://i.imgur.com/yNydy51.jpg)
+![Trinity Layouts](https://i.imgur.com/jYbPUzM.jpeg)
 
 * Keyboard Maintainer: [Luis Godinez](https://github.com/luis-Godinez)
 * Hardware Supported: Trinity
-* Hardware Availability: [Ungodly Design](https://ungodly.design/)
+* Hardware Availability: [Ungodly Design](https://ungodly.design/products/trinity-pcb)
 
 Make example for this keyboard (after setting up your build environment):
 
