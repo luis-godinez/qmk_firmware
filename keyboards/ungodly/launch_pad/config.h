@@ -18,6 +18,7 @@
 /* Midi Slider */
 #define SLIDER_PIN F6
 #define MIDI_ADVANCED
+<<<<<<< HEAD
 
 /* RGB Matrix configuration */
 #define RGB_MATRIX_KEYPRESSES
@@ -125,3 +126,5 @@
 // #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 
 #define LOCKING_RESYNC_ENABLE
+=======
+>>>>>>> 72ec742d2c35b364d8756109e552abaf62298b08
