@@ -3,7 +3,7 @@
 A hotswap PCB for the Rama U-80 that offers expanded layout options with hotswap sockets. No RGB.
 
 ![Trinity Back](https://i.imgur.com/yNydy51.jpg)
-![Trinity Layouts](https://i.imgur.com/jYbPUzM.jpeg)
+![Trinity Layouts](https://i.imgur.com/cIq7uwH.jpg)
 
 * Keyboard Maintainer: [Luis Godinez](https://github.com/luis-Godinez)
 * Hardware Supported: Trinity
