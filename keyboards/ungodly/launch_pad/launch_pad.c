@@ -14,6 +14,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 #include "quantum.h"
+#include "analog.h"
+#include "qmk_midi.h"
+
 
 #ifdef RGB_MATRIX_ENABLE
 led_config_t g_led_config = { {
@@ -42,3 +45,25 @@ led_config_t g_led_config = { {
     2, 2
 } };
 #endif
+
+bool encoder_update_kb(uint8_t index, bool clockwise) {
+  if (clockwise) {
+      tap_code(KC_VOLU);
+  } else {
+      tap_code(KC_VOLD);
+  }
+  return true;
+}
+
+// Potentiometer Slider, MIDI Control
+uint8_t divisor = 0;
+void slider(void){
+  if (divisor++) { // only run the slider function 1/256 times it's called
+      return;
+  }
+  midi_send_cc(&midi_device, 2, 0x3E, 0x7F - (analogReadPin(SLIDER_PIN) >> 3));
+}
+
+void matrix_scan_user(void) {
+  slider();
+}
