@@ -14,9 +14,6 @@
         "nkro": true,
         "rgb_matrix": true
     },
-    "tapping": {
-        "term": 100
-    },
     "matrix_pins": {
         "cols": ["GP28", "GP27", "GP26", "GP25", "GP24", "GP23", "GP21", "GP6", "GP8", "GP9", "GP13", "GP12", "GP15", "GP11", "GP10", "GP3", "GP2", "GP0"],
         "rows": ["GP29", "GP20", "GP19", "GP14", "GP5", "GP1"]
