@@ -6,12 +6,16 @@
     "diode_direction": "COL2ROW",
     "features": {
         "bootmagic": true,
+        "via": true,
         "command": false,
         "console": false,
         "extrakey": true,
         "mousekey": true,
         "nkro": true,
         "rgb_matrix": true
+    },
+    "tapping": {
+        "term": 100
     },
     "matrix_pins": {
         "cols": ["GP28", "GP27", "GP26", "GP25", "GP24", "GP23", "GP21", "GP6", "GP8", "GP9", "GP13", "GP12", "GP15", "GP11", "GP10", "GP3", "GP2", "GP0"],
