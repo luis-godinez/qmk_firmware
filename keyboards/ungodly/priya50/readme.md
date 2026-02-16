@@ -4,9 +4,9 @@ A 50% hotswap pcb powered by the RP2040, with underglow lighting, encoder and ol
 
 ![Priya50](https://i.imgur.com/zNnmPV9.jpg)
 
-* Keyboard Maintainer: [Luis Godinez](https://github.com/luis-Godinez)
-* Hardware Supported: Priya50
-* Hardware Availability: [Ungodly Design](https://ungodly.design/)
+- Keyboard Maintainer: [Luis Godinez](https://github.com/luis-Godinez)
+- Hardware Supported: Priya50
+- Hardware Availability: [Ungodly Design](https://ungodly.design/)
 
 Make example for this keyboard (after setting up your build environment):
 

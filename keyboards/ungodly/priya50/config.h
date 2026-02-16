@@ -16,9 +16,6 @@
 
 #pragma once
 
-/* RGB LED Strip*/
-#define RGBLED_NUM 8
-
 /* Oled Display */
 #define I2C1_SDA_PIN GP18 //OG PCB: GP19 -> SDA
 #define I2C1_SCL_PIN GP19 //OG PCB: GP20 -> SCL
